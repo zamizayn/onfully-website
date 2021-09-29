@@ -7,6 +7,8 @@
    <html class="no-js">
    <!--<![endif]-->         
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="description" content="Onfully One page parallax responsive HTML Template ">
 
@@ -88,15 +90,14 @@
   
           </div>
       </header>
-      <!--
-    End Fixed Navigation
+   
 
     <section class="contact-us section-bg">
 
             <!-- Contact Form -->
             <!-- <div class="row text-center"> -->
 				<div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-					<form id="submit-form"   role="form">
+					<form id="submit-form" method="POST"  role="form" action="https://script.google.com/macros/s/AKfycbyzAV0ZWwblrJjW7a6pJElrhAlVPTI-ZbbAtyvdypUSphmENX-LPs5urvLD3q-2vf6p/exec">
 
 						<div class="form-group">
 							<input type="text" placeholder="Your Name" class="form-control" name="Name" id="name">
@@ -142,22 +143,22 @@
 				<!-- ./End Contact Form -->
             </section>
 
-            <script>
-     var $form = $('#submit-form'),
-    url = 'https://script.google.com/macros/s/AKfycbyzAV0ZWwblrJjW7a6pJElrhAlVPTI-ZbbAtyvdypUSphmENX-LPs5urvLD3q-2vf6p/exec'
 
-    $('#contact-submit-form').on('click', function(e) {  
-  e.preventDefault();
-  var jqxhr = $.ajax({
-    url: url,
-    method: "GET",
-    dataType: "json",
-    data: $form.serializeObject()
-  }).success(
-    window.alert('sucess')
-  );
-})
-            </script>
+<script>
+	var form = document.getElementById('submit-form');
+	form.addEventListener("submit", e => {
+	  e.preventDefault();
+	  fetch(form.action, {
+		  method : "POST",
+		  body: new FormData(document.getElementById("submit-form")),
+	  }).then(
+		  response => response.json()
+	  ).then((html) => {
+		// you can put any JS code here
+		alert('success')
+	  });
+	});
+  </script>
 
             <!-- 
 		Essential Scripts
@@ -175,6 +176,8 @@
 	<script type="text/javascript" src="plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
 	<!-- Magnific popup -->
 	<script type="text/javascript" src="plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 	<!-- Google Map API -->
 	<script type="text/javascript"
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
