@@ -1,7 +1,7 @@
 /*
 Template Name: Onfully Responsive HTML5/CSS3 Business Template
-Author: Themefisher
-Author URI: www.Themefisher.com
+Author: Onfully
+Author URI: www.Onfully.com
 Description: Onfully Responsive HTML5/CSS3 Portfolio Template
 Version: 1.0
 Tags: one-page, single-page, portfolio, custom-colors, post-formats, responsive, html5, css3
@@ -414,8 +414,22 @@ a:hover {
   color: #fff;
 }
 
+@media(max-width: 767px){
+.carousel-inner .item{
+  max-height: 200px!important;
+}
+
+}
+
+@media(max-width: 767px){
+  .hero-area{
+    height: auto!important;
+  }
+  
+  }
+
 .title h2 span {
-  color: #ff6b33;
+  color: #5c25b7;
 }
 
 .title p {
@@ -554,7 +568,7 @@ a:hover {
   Navigation
 ==================================================================*/
 .navigation {
-  background-color: #1d2024;
+  background-color: white;
   width: 100%;
   z-index: 99;
   margin-bottom: 0;
@@ -573,7 +587,7 @@ a:hover {
 }
 
 .navigation .navigation-menu li.active a {
-  color: #ff6b33;
+  color: #5c25b7;
 }
 
 .navigation .navigation-menu li a {
@@ -583,7 +597,7 @@ a:hover {
 
 .navigation .navigation-menu li a:hover, .navigation .navigation-menu li a:focus {
   background: transparent;
-  color: #ff6b33;
+  color: #5c25b7;
 }
 
 .navbar-toggle {
@@ -935,6 +949,9 @@ a:hover {
 .counters-item h3 {
   font-size: 20px;
   margin: 0;
+}
+#alert{
+  display: none;
 }
 
 /*=================================================================
